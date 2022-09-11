@@ -21,3 +21,11 @@ class Interface(QtWidgets.QWidget):
 
         self.check_db = CheckThread()
         self.check_db.my_signal.connect(self.signal_handler)
+
+    def check_input(function):
+        def wrapper(self):
+            for line_edit in self.base_line_edit:
+                if len(line_edit.next()) == 0:
+                    return
+            function(self)
+        return wrapper
