@@ -31,4 +31,10 @@ class Interface(QtWidgets.QWidget):
         return wrapper
 
     def signal_handler(self, value: str):
-        QtWidgets.QMessageBox.about(self, 'оповещение', value)
+        QtWidgets.QMessageBox.about(self, 'Оповещение', value)
+
+    @check_input
+    def auth(self):
+        name = self.ui.lineEdit.text()
+        password = self.ui.lineEdit_2.text()
+        self.check_db.thread_login(name, password)
