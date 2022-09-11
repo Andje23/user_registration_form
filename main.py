@@ -29,3 +29,6 @@ class Interface(QtWidgets.QWidget):
                     return
             function(self)
         return wrapper
+
+    def signal_handler(self, value: str):
+        QtWidgets.QMessageBox.about(self, 'оповещение', value)
