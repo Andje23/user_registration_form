@@ -38,3 +38,9 @@ class Interface(QtWidgets.QWidget):
         name = self.ui.lineEdit.text()
         password = self.ui.lineEdit_2.text()
         self.check_db.thread_login(name, password)
+        
+    @check_input
+    def reg(self):
+        name = self.ui.lineEdit.text()
+        password = self.ui.lineEdit_2.text()
+        self.check_db.thread_register(name, password)
