@@ -44,3 +44,10 @@ class Interface(QtWidgets.QWidget):
         name = self.ui.lineEdit.text()
         password = self.ui.lineEdit_2.text()
         self.check_db.thread_register(name, password)
+
+
+if __name__ == '__main__':
+    app = QtWidgets.QApplication(sys.argv)
+    mywin = Interface()
+    mywin.show()
+    sys.exit(app.exec_())
